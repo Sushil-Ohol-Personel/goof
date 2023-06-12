@@ -29,6 +29,6 @@ steps:
     entrypoint: bash
 artifacts:
   objects:
-    location: 'gs://sushil-snyk-scan/scan_output'
+    location: 'gs://sushil-snyk-scan/snyk_scan_output/final/'
     paths:
       - results.html
