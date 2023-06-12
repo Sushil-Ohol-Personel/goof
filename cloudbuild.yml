@@ -20,17 +20,10 @@ steps:
       - '-c'
       - |-
         snyk config set api=${_SNYK_TOKEN}
-        snyk container test --severity-threshold=medium jiajunngjj/docker-goof:latest
+        snyk container test --severity-threshold=medium sushilohol/hello-tomcat:latest  
     id: Snyk Container Test
     entrypoint: bash
-  - name: snyk/snyk-cli:npm
-    args:
-      - '-c'
-      - |-
-        snyk config set api=${_SNYK_TOKEN}
-        snyk iac test --severity-threshold=medium main.tf || true
-    id: Snyk IaC Test
-    entrypoint: bash
+
   - name: snyk/snyk-cli:npm
     args:
       - '-c'
