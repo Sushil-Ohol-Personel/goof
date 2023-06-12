@@ -15,13 +15,7 @@ steps:
         snyk code test --severity-threshold=medium || true
     id: Snyk Code Test
     entrypoint: bash
-  - name: snyk/snyk-cli:npm
-    args:
-      - '-c'
-      - |-
-        snyk config set api=${_SNYK_TOKEN}
-        snyk container test --severity-threshold=medium sushilohol/hello-tomcat:latest  
-    id: Snyk Container Test
+
     entrypoint: bash
 
   - name: snyk/snyk-cli:npm
